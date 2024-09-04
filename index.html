@@ -14,11 +14,13 @@
 
         #navbar{
             width: 100%;
-            height: 70px;
+            height: 100px;
+            background-color: white;
+            z-index: 1;
             display: flex;
             justify-content: space-around;
             align-items: center;
-            position: fixed;
+            position: sticky;
             left: 0;
             right: 0;
         }
@@ -37,13 +39,13 @@
         #nav-name span{
             font-family: Arial, Helvetica, sans-serif;
             font-size: 22px;
-            color: seagreen;
+            color: #007E85;
             letter-spacing: 1px;
         }
         #nav-name {
             font-family: Arial, Helvetica, sans-serif;
             font-size: 22px;
-            color:rgb(1, 80, 182);
+            color:#6EAB36;
         }
 
         .middle{
@@ -57,8 +59,8 @@
             font-size: 18px;
             letter-spacing: 1px;
             &:hover{
-                color: seagreen;
-                text-decoration: underline seagreen;
+                color: #007E85;
+                text-decoration: underline #007E85;
                 cursor: pointer;
                 transition: 0.5s ease-in-out;
             }
@@ -75,7 +77,7 @@
             font-size: 18px;
             background: none;
             border: none;
-            color: seagreen;
+            color: #007E85;
             letter-spacing: 1px;
             cursor: pointer;
         }
@@ -83,12 +85,13 @@
             width: 100px;
             height: 30px;
             font-size: 18px;
-            background-color: rgba(46, 139, 86, 0.63);
+            background-color: #007E85;
+            color: white;
             border: 1px solid grey;
             letter-spacing: 1px;
             border-radius: 7px;
             &:hover{
-                background-color: rgba(46, 139, 86, 0.338);
+                background-color: rgb(46, 139, 86);
                 transition: 0.5s ease-in-out;
                 cursor: pointer;
             }
@@ -97,8 +100,303 @@
         #cover-section{
             width: 100%;
             height: 400px;
-            
+            /* position: relative; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
+
+        .container{
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            height: 300px;
+        }
+
+        .left-container{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            /* align-items: start; */
+            height: 300px;
+            width: 650px;
+        }
+
+        .cover-detail-intro{
+            font-size: 26px;
+            font-family: Arial, Helvetica, sans-serif;
+            letter-spacing: 1px;
+            line-height: 40px;
+        }
+
+        .seagreen{
+            color: #007E85;
+        }
+
+        .blue{
+            color: #6EAB36;
+        }
+
+        .cover-detail-para{
+            font-size: 15px;
+            letter-spacing: 1px;
+            line-height: 23px;
+            font-family: Arial, Helvetica, sans-serif;
+            padding-top: 15px;
+            width: 500px;
+        }
+
+        .cover-btns{
+            display: flex;
+            justify-content: space-between;
+            width: 250px;
+            text-align: left;
+        }
+
+        .appointment-btn{
+            width: 130px;
+            height: 30px;
+            font-size: 16px;
+            border-radius: 8px;
+            border: 1px solid grey;
+            color: white;
+            background-color: #007E85;
+            &:hover{
+            background-color: rgba(46, 139, 86, 0.645);
+                transition: 0.5s ease-in-out
+                ;
+                cursor: pointer;
+            }
+            &:active{
+                background-color: rgba(255, 255, 255, 0.645);
+                ;
+                cursor: pointer;
+            }
+        }
+
+        .watch-video-div{
+            display: flex;
+            justify-content: space-between;
+            width: 100px;
+            align-items: center;
+        }
+
+        .watch-video{
+            width: 100px;
+            background: none;
+            border: none;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            color: #007E85;
+            &:hover{
+            color: #007e85b1;
+cursor: pointer;
+            }
+            &:active{
+            color: #ffffffb1;
+
+            }
+        }
+
+        .cover-img{
+            width: 240px;
+            position: absolute;
+            right: 12.2%;
+            top: 21%;
+        }
+
+        .blob{
+            width: 500px;
+            position: absolute;
+            left: 53%;
+            top: 10%;
+        }
+
+        .switch {
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 3.5em;
+  height: 2em;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  border: 1px solid #adb5bd;
+  transition: .4s;
+  border-radius: 30px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.4em;
+  width: 1.4em;
+  border-radius: 20px;
+  left: 0.27em;
+  bottom: 0.25em;
+  background-color: #adb5bd;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #007bff;
+  border: 1px solid #007bff;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #007bff;
+}
+
+input:checked + .slider:before {
+  transform: translateX(1.4em);
+  background-color: #fff;
+}
+
+#find-doctor-section{
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inner{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    width: 850px;
+    height: 150px;
+    background: whitesmoke;
+
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.find-a-doctor{
+    font-size: 26px;
+    letter-spacing: 1px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-left: 18px;
+}
+
+.input-group{
+    display: flex;
+    justify-content: space-around;
+    width: 90%;
+    height: 30px;
+    align-items: center;
+}
+
+#doc-name-inp{
+    width: 180px;
+    height: 30px;   
+    font-size: 18px;
+    padding: 10px;
+    outline: seagreen;
+    border: 1px solid seagreen;
+    border-radius: 5px;
+
+}
+
+#doc-spec-inp{
+    width: 180px;
+    height: 30px;   
+    font-size: 18px;
+    padding: 10px;
+    outline: seagreen;
+    border: 1px solid seagreen;
+    border-radius: 5px;
+}
+
+.available-toggle{
+    display: flex;
+    align-items: center;
+    /* width: 100px; */
+    gap: 10px;
+}
+
+.available-toggle p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 19px;
+}
+
+.Search-btn{
+    width: 120px;
+    height: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    background-color: #007E85;
+    color: white;
+    border: none;
+    border-radius: 5px;
+&:hover{
+    background-color: #007e8572;
+
+}
+&:active{
+    background-color: #ffffff;
+    color: black
+    ;
+}
+}
+
+#stats{
+    width: 100%;
+    height: 300px;
+    text-align: center;
+}
+
+.stats-heading h1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 26px;
+    color: #007E85;
+    letter-spacing: 1px;
+}
+
+.parent{
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.box{
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    /* background: #000; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.box p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    color: #007E85;
+}
+
+.lightened{
+    color: white;
+    
+}
     </style>
 </head>
 <body>
@@ -143,6 +441,50 @@
                       </svg>
                       <img src="./assets/cover-img.png" alt="doctor img" class="cover-img">
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="find-doctor-section">
+        <div class="inner">
+            <div class="heading">
+                <h1 class="find-a-doctor">Find A Doctor</h1>
+            </div>
+            <div class="input-group">
+                <input type="text" name="Name" id="doc-name-inp" placeholder="Name">
+                <input type="text" name="Speciality" id="doc-spec-inp" placeholder="Speciality">
+                <div class="available-toggle">
+                    <p>Available</p>
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <button class="Search-btn">Search</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="stats">
+        <div class="stats-heading">
+            <h1>Our Result In Numbers</h1>
+        </div>
+        <div class="parent">
+            <div class="box">
+                <p>99 <span class="lightened">%</span></p>
+                <h6>COSTUMER SATISFACTION</h6>
+            </div>
+            <div class="box">
+                <p>15<span class="lightened">K</span></p>
+                <h6>ONLINE PATIENTS</h6>
+            </div>
+            <div class="box">
+                <p>12<span class="lightened">K</span></p>
+                <h6>PATIENTS RECOVERED</h6>
+            </div>
+            <div class="box">
+                <p>240<span class="lightened">%</span></p>
+                <h6>COMPANY GROWTH</h6>
             </div>
         </div>
     </section>
