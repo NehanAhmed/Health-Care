@@ -1,518 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Health Care</title>
     <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon">
-    <style>
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        #navbar{
-            width: 100%;
-            height: 100px;
-            background-color: white;
-            z-index: 1;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            position: sticky;
-            left: 0;
-            right: 0;
-        }
-
-        .left{
-            display: flex;
-            justify-content: space-around;
-            width: 180px;
-            align-items: center;
-        }
-
-        #nav-logo{
-            width: 55px;
-        }
-
-        #nav-name span{
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 22px;
-            color: #007E85;
-            letter-spacing: 1px;
-        }
-        #nav-name {
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 22px;
-            color:#6EAB36;
-        }
-
-        .middle{
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            width: 350px;
-        }
-        .nav-links{
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 18px;
-            letter-spacing: 1px;
-            &:hover{
-                color: #007E85;
-                text-decoration: underline #007E85;
-                cursor: pointer;
-                transition: 0.5s ease-in-out;
-            }
-        }
-        .right{
-            display: flex;
-            justify-content: space-around;
-            width: 200px;
-            align-items: center;
-        }
-
-        .register-btn{
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 18px;
-            background: none;
-            border: none;
-            color: #007E85;
-            letter-spacing: 1px;
-            cursor: pointer;
-        }
-        .login-btn{
-            width: 100px;
-            height: 30px;
-            font-size: 18px;
-            background-color: #007E85;
-            color: white;
-            border: 1px solid grey;
-            letter-spacing: 1px;
-            border-radius: 7px;
-            &:hover{
-                background-color: rgb(46, 139, 86);
-                transition: 0.5s ease-in-out;
-                cursor: pointer;
-            }
-        }
-
-        #cover-section{
-            width: 100%;
-            height: 400px;
-            /* position: relative; */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .container{
-            display: flex;
-            justify-content: space-between;
-            width: 88%;
-            height: 300px;
-        }
-
-        .left-container{
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            /* align-items: start; */
-            height: 300px;
-            width: 650px;
-        }
-
-        .cover-detail-intro{
-            font-size: 30px;
-            font-family: Arial, Helvetica, sans-serif;
-            letter-spacing: 1px;
-            line-height: 40px;
-        }
-
-        .seagreen{
-            color: #007E85;
-        }
-
-        .blue{
-            color: #6EAB36;
-        }
-
-        .cover-detail-para{
-            font-size: 16px;
-            letter-spacing: 1px;
-            line-height: 23px;
-            font-family: Arial, Helvetica, sans-serif;
-            padding-top: 15px;
-            width: 500px;
-        }
-
-        .cover-btns{
-            display: flex;
-            justify-content: space-between;
-            width: 250px;
-            text-align: left;
-        }
-
-        .appointment-btn{
-            width: 130px;
-            height: 40px;
-            font-size: 19px;
-            border-radius: 8px;
-            border: none;
-            color: white;
-            background-color: #007E85;
-            &:hover{
-            background-color: rgba(46, 139, 86, 0.645);
-                transition: 0.5s ease-in-out
-                ;
-                cursor: pointer;
-            }
-            &:active{
-                background-color: rgba(255, 255, 255, 0.645);
-                ;
-                cursor: pointer;
-            }
-        }
-
-        .watch-video-div{
-            display: flex;
-            justify-content: space-between;
-            width: 100px;
-            align-items: center;
-        }
-
-        .watch-video{
-            width: 100px;
-            background: none;
-            border: none;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 16px;
-            color: #007E85;
-            &:hover{
-            color: #007e85b1;
-cursor: pointer;
-            }
-            &:active{
-            color: #ffffffb1;
-
-            }
-        }
-
-        .cover-img{
-            width: 240px;
-            position: absolute;
-            right: 12.2%;
-            top: 21%;
-        }
-
-        .blob{
-            width: 500px;
-            position: absolute;
-            left: 53%;
-            top: 10%;
-        }
-
-        .switch {
-  font-size: 17px;
-  position: relative;
-  display: inline-block;
-  width: 3.5em;
-  height: 2em;
-}
-
-/* Hide default HTML checkbox */
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-/* The slider */
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #fff;
-  border: 1px solid #adb5bd;
-  transition: .4s;
-  border-radius: 30px;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 1.4em;
-  width: 1.4em;
-  border-radius: 20px;
-  left: 0.27em;
-  bottom: 0.25em;
-  background-color: #adb5bd;
-  transition: .4s;
-}
-
-input:checked + .slider {
-  background-color: #007bff;
-  border: 1px solid #007bff;
-}
-
-input:focus + .slider {
-  box-shadow: 0 0 1px #007bff;
-}
-
-input:checked + .slider:before {
-  transform: translateX(1.4em);
-  background-color: #fff;
-}
-
-#find-doctor-section{
-    width: 100%;
-    height: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.inner{
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-    width: 850px;
-    height: 150px;
-    background: whitesmoke;
-
-    border-radius: 10px;
-    padding: 10px;
-}
-
-.find-a-doctor{
-    font-size: 26px;
-    letter-spacing: 1px;
-    font-family: Arial, Helvetica, sans-serif;
-    padding-left: 18px;
-}
-
-.input-group{
-    display: flex;
-    justify-content: space-around;
-    width: 90%;
-    height: 30px;
-    align-items: center;
-}
-
-#doc-name-inp{
-    width: 180px;
-    height: 30px;   
-    font-size: 18px;
-    padding: 10px;
-    outline: seagreen;
-    border: 1px solid seagreen;
-    border-radius: 5px;
-
-}
-
-#doc-spec-inp{
-    width: 180px;
-    height: 30px;   
-    font-size: 18px;
-    padding: 10px;
-    outline: seagreen;
-    border: 1px solid seagreen;
-    border-radius: 5px;
-}
-
-.available-toggle{
-    display: flex;
-    align-items: center;
-    /* width: 100px; */
-    gap: 10px;
-}
-
-.available-toggle p{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 19px;
-}
-
-.Search-btn{
-    width: 120px;
-    height: 30px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 18px;
-    background-color: #007E85;
-    color: white;
-    border: none;
-    border-radius: 5px;
-&:hover{
-    background-color: #007e8572;
-
-}
-&:active{
-    background-color: #ffffff;
-    color: black
-    ;
-}
-}
-
-#stats{
-    width: 100%;
-    height: 400px;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.stats-heading h1{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 30px;
-    color: #007E85;
-    letter-spacing: 1px;
-}
-
-.parent{
-    width: 90%;
-    height: 200px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-left: 60px;
-}
-
-.box{
-    width: 200px;
-    height: 200px;
-    text-align: center;
-    /* background: #000; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.box p{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 29px;
-    font-weight: bold;
-    color: #007E85;
-}
-
-.lightened{
-    color: #007e853c;
     
-}
-
-#content-section{
-    width: 100%;
-    height: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.wrapper{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-
-    width:90%;
-}
-
-.wrapper-right{
-    width: 500px;
-    /* background: #000; */
-    display: flex;
-    justify-content: space-between;
-    height: 200px;
-    flex-direction: column;
-    /* margin: 40px; */
-    
-}
-
-.wrapper-right h1{
-    font-size: 34px;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #007E85;
-    letter-spacing: 1px;
-}
-
-.wrapper-right p{
-    font-size: 18px;
-    font-family: Arial, Helvetica, sans-serif;
-    letter-spacing: 1px;
-}
-
-.get-started-btn{
-    width: 120px;
-    height: 40px;
-    font-size: 
-    18px;
-    border-radius: 20px;
-    border: none;
-    background-color: #007E85;
-    color: white;
-}
-
-.talk-to-sales-btn{
-    width: 120px;
-    height: 40px;
-    font-size: 
-    18px;
-    border-radius: 20px;
-    border: none;
-    background-color:whitesmoke;
-    color:#007E85;
-}
-
-.wrapper-right-img{
-    width: 450px;
-}
-
-#services-section   {
-    width: 100%;
-    height: 800px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.title{
-    width: 460px;
-    /* background: #000; */
-    text-align: center;
-}
-
-.title h1{
-    font-family: Arial, Helvetica, sans-serif;
-    color: #007E85;
-}
-
-.title p{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 18px;
-}
-
-.service-card-parent{
-    width: 90%;   
-    position: relative;
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 20px;
-}
-
-.service-card{
-    width: 250px;
-    height: 300px;
-    background-color: whitesmoke;
-    border-radius: 20px;
-    padding: 10px;
-    /* border: 1px solid black; */
-}
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <nav id="navbar">
+    <!-- Navbar Start -->
+
+    <nav id="navbar">t
         <div class="left">
             <img src="./assets/logo.png" alt="" id="nav-logo">
             <p id="nav-name"><span>Health</span> Care</p>
@@ -530,33 +31,41 @@ input:checked + .slider:before {
         </div>
     </nav>
 
+    <!-- Navbar End -->
+     <!-- Page Cover -->
     <section id="cover-section">
         <div class="container">
             <div class="left-container">
                 <div class="cover-detail-div">
-                    <h1 class="cover-detail-intro">Providing Quality <span class="seagreen"> Healthcare</span> for A <br><span class="blue">Brighter</span> and <span class="blue">Healthy</span> Future</h1>
-                    <p class="cover-detail-para">At our hospital, we are dedicated to providing exceptional medical care to our patients and their families. Our experienced team of medical professionals, cutting-edge technology, and compassionate approach make us a leader in the healthcare industry</p>
+                    <h1 class="cover-detail-intro">Providing Quality <span class="seagreen"> Healthcare</span> for A
+                        <br><span class="blue">Brighter</span> and <span class="blue">Healthy</span> Future</h1>
+                    <p class="cover-detail-para">At our hospital, we are dedicated to providing exceptional medical care
+                        to our patients and their families. Our experienced team of medical professionals, cutting-edge
+                        technology, and compassionate approach make us a leader in the healthcare industry</p>
                 </div>
                 <div class="cover-btns">
                     <button class="appointment-btn">Appointment</button>
                     <div class="watch-video-div">
                         <span class="fa fa-"></span>
-                    <button class="watch-video">Watch Video</button>
+                        <button class="watch-video">Watch Video</button>
 
-                </div>
+                    </div>
                 </div>
             </div>
             <div class="right-container">
                 <div class="cover-img-container">
                     <svg class="blob" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                        <path  fill="#FF0066" d="M62.8,-19C69.8,1.3,56.1,29.8,35.4,43.6C14.7,57.4,-12.8,56.5,-33.7,42.3C-54.5,28.1,-68.6,0.6,-61.9,-19.3C-55.2,-39.2,-27.6,-51.4,0.1,-51.5C27.8,-51.5,55.7,-39.3,62.8,-19Z" transform="translate(100 100)" />
-                      </svg>
-                      <img src="./assets/cover-img.png" alt="doctor img" class="cover-img">
+                        <path fill="#FF0066"
+                            d="M62.8,-19C69.8,1.3,56.1,29.8,35.4,43.6C14.7,57.4,-12.8,56.5,-33.7,42.3C-54.5,28.1,-68.6,0.6,-61.9,-19.3C-55.2,-39.2,-27.6,-51.4,0.1,-51.5C27.8,-51.5,55.7,-39.3,62.8,-19Z"
+                            transform="translate(100 100)" />
+                    </svg>
+                    <img src="./assets/cover-img.png" alt="doctor img" class="cover-img">
                 </div>
             </div>
         </div>
     </section>
-
+    <!-- Page Cover -->
+     <!-- Find Doctor -->
     <section id="find-doctor-section">
         <div class="inner">
             <div class="heading">
@@ -576,33 +85,35 @@ input:checked + .slider:before {
             </div>
         </div>
     </section>
-
+    <!-- Find Doctor -->
+     <!-- Stats -->
     <section id="stats">
         <div class="stats-div">
-        <div class="stats-heading">
-            <h1>Our Result In Numbers</h1>
+            <div class="stats-heading">
+                <h1>Our Result In Numbers</h1>
+            </div>
+            <div class="parent">
+                <div class="box">
+                    <p>99<span class="lightened">%</span></p>
+                    <h6>COSTUMER SATISFACTION</h6>
+                </div>
+                <div class="box">
+                    <p>15<span class="lightened">K</span></p>
+                    <h6>ONLINE PATIENTS</h6>
+                </div>
+                <div class="box">
+                    <p>12<span class="lightened">K</span></p>
+                    <h6>PATIENTS RECOVERED</h6>
+                </div>
+                <div class="box">
+                    <p>240<span class="lightened">%</span></p>
+                    <h6>COMPANY GROWTH</h6>
+                </div>
+            </div>
         </div>
-        <div class="parent">
-            <div class="box">
-                <p>99<span class="lightened">%</span></p>
-                <h6>COSTUMER SATISFACTION</h6>
-            </div>
-            <div class="box">
-                <p>15<span class="lightened">K</span></p>
-                <h6>ONLINE PATIENTS</h6>
-            </div>
-            <div class="box">
-                <p>12<span class="lightened">K</span></p>
-                <h6>PATIENTS RECOVERED</h6>
-            </div>
-            <div class="box">
-                <p>240<span class="lightened">%</span></p>
-                <h6>COMPANY GROWTH</h6>
-            </div>
-        </div>
-    </div>
     </section>
-
+    <!-- Stats -->
+    <!-- Content Section -->
     <section id="content-section">
         <div class="wrapper">
             <div class="wrapper-right">
@@ -618,8 +129,9 @@ input:checked + .slider:before {
             </div>
         </div>
     </section>
-
-    <div id="services-section">
+    <!-- Content Section -->
+     <!-- Service Section -->
+    <section id="services-section">
         <div class="services-wrapper">
             <div class="title">
                 <h1>Services We Provide</h1>
@@ -628,47 +140,234 @@ input:checked + .slider:before {
             <div class="service-card-parent">
                 <div class="service-card">
                     <div class="img-placeholder">
-                        <img src="" alt="">
+                        <img src="./assets/Container.png" alt="">
                     </div>
                     <div class="card-body">
                         <h6>Dental Treatment</h6>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse, tempora libero. Nulla, officiis.</p>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse, tempora libero. Nulla,
+                            officiis.</p>
                         <p><a href="#" class="learn-more">Learn More →
-                        </a></p>
+                            </a></p>
                     </div>
                 </div>
                 <div class="service-card">
-                    <h6>Bones Treatments</h6>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse, tempora libero. Nulla, officiis.</p>
+                    <div class="img-placeholder">
+                        <img src="./assets/Container (1).png" alt="">
+                    </div>
+                    <div class="card-body">
+                        <h6>Bones Treatment</h6>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse, tempora libero. Nulla,
+                            officiis.</p>
                         <p><a href="#" class="learn-more">Learn More →
-                        </a></p>
+                            </a></p>
+                    </div>
                 </div>
                 <div class="service-card">
-                    <h6>Diagnosis</h6>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse, tempora libero. Nulla, officiis.</p>
+                    <div class="img-placeholder">
+                        <img src="./assets/Container (2).png" alt="">
+                    </div>
+                    <div class="card-body">
+                        <h6>Diagnosis</h6>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse, tempora libero. Nulla,
+                            officiis.</p>
                         <p><a href="#" class="learn-more">Learn More →
-                        </a></p>
+                            </a></p>
+                    </div>
                 </div>
                 <div class="service-card">
-                    <h6>Cardiology</h6>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse, tempora libero. Nulla, officiis.</p>
+                    <div class="img-placeholder">
+                        <img src="./assets/Container (3).png" alt="">
+                    </div>
+                    <div class="card-body">
+                        <h6>Cardiology</h6>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse, tempora libero. Nulla,
+                            officiis.</p>
                         <p><a href="#" class="learn-more">Learn More →
-                        </a></p>
+                            </a></p>
+                    </div>
                 </div>
                 <div class="service-card">
-                    <h6>Surgery</h6>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse, tempora libero. Nulla, officiis.</p>
+                    <div class="img-placeholder">
+                        <img src="./assets/Container (4).png" alt="">
+                    </div>
+                    <div class="card-body">
+                        <h6>Surgery</h6>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse, tempora libero. Nulla,
+                            officiis.</p>
                         <p><a href="#" class="learn-more">Learn More →
-                        </a></p>
+                            </a></p>
+                    </div>
                 </div>
                 <div class="service-card">
-                    <h6>Eye Care</h6>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse, tempora libero. Nulla, officiis.</p>
+                    <div class="img-placeholder">
+                        <img src="./assets/Container (5).png" alt="">
+                    </div>
+                    <div class="card-body">
+                        <h6>Eye Care</h6>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse, tempora libero. Nulla,
+                            officiis.</p>
                         <p><a href="#" class="learn-more">Learn More →
-                        </a></p>
+                            </a></p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+    <!-- Service Section -->
+     <!-- Team Member -->
+    <section id="team-member">
+        <div class="team-member-title">
+            <h1>Meet Our Team Memeber</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae qui voluptas ducimus incidunt eius!</p>
+        </div>
+        <div class="team-member-container">
+            <div class="team-member-card">
+                <div class="placeholder-member-dp">
+                    <img src="./assets/BG.png" alt="">
+                </div>
+                <div class="detail">
+                    <h1>John Carter</h1>
+                    <p>CEO & CO-FOUNDER</p>
+                    <p class="detail-para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse est cumque dicta illum.</p>
+                </div>
+                <div class="social-icons">
+                    <div class="facebook-icon">
+                        <img src="./assets/Facebook.svg" alt="">
+                    </div>
+                    <div class="twitter-icon">
+                        <img src="./assets/Twitter.svg" alt="">
+                    </div>
+                    <div class="instagram-icon">
+                        <img src="./assets/Instagram.svg" alt="">
+                    </div>
+                    <div class="linkedin-icon">
+                        <img src="./assets/LinkedIn.svg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="team-member-card">
+                <div class="placeholder-member-dp">
+                    <img src="./assets/BG (1).png" alt="">
+                </div>
+                <div class="detail">
+                    <h1>Soophie Moore</h1>
+                    <p>Dental Specialist</p>
+                    <p class="detail-para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse est cumque dicta illum.</p>
+                </div>
+                <div class="social-icons">
+                    <div class="facebook-icon">
+                        <img src="./assets/Facebook.svg" alt="">
+                    </div>
+                    <div class="twitter-icon">
+                        <img src="./assets/Twitter.svg" alt="">
+                    </div>
+                    <div class="instagram-icon">
+                        <img src="./assets/Instagram.svg" alt="">
+                    </div>
+                    <div class="linkedin-icon">
+                        <img src="./assets/LinkedIn.svg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="team-member-card">
+                <div class="placeholder-member-dp">
+                    <img src="./assets/BG (2).png" alt="">
+                </div>
+                <div class="detail">
+                    <h1>Matt Canon</h1>
+                    <p>Orthopadic</p>
+                    <p class="detail-para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse est cumque dicta illum.</p>
+                </div>
+                <div class="social-icons">
+                    <div class="facebook-icon">
+                        <img src="./assets/Facebook.svg" alt="">
+                    </div>
+                    <div class="twitter-icon">
+                        <img src="./assets/Twitter.svg" alt="">
+                    </div>
+                    <div class="instagram-icon">
+                        <img src="./assets/Instagram.svg" alt="">
+                    </div>
+                    <div class="linkedin-icon">
+                        <img src="./assets/LinkedIn.svg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="team-member-card">
+                <div class="placeholder-member-dp">
+                    <img src="./assets/BG (3).png" alt="">
+                </div>
+                <div class="detail">
+                    <h1>Andy Smith</h1>
+                    <p>Bain Surgeon</p>
+                    <p class="detail-para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse est cumque dicta illum.</p>
+                </div>
+                <div class="social-icons">
+                    <div class="facebook-icon">
+                        <img src="./assets/Facebook.svg" alt="">
+                    </div>
+                    <div class="twitter-icon">
+                        <img src="./assets/Twitter.svg" alt="">
+                    </div>
+                    <div class="instagram-icon">
+                        <img src="./assets/Instagram.svg" alt="">
+                    </div>
+                    <div class="linkedin-icon">
+                        <img src="./assets/LinkedIn.svg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="team-member-card">
+                <div class="placeholder-member-dp">
+                    <img src="./assets/BG (4).png" alt="">
+                </div>
+                <div class="detail">
+                    <h1>Lily Woods</h1>
+                    <p>Heart Specialist</p>
+                    <p class="detail-para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse est cumque dicta illum.</p>
+                </div>
+                <div class="social-icons">
+                    <div class="facebook-icon">
+                        <img src="./assets/Facebook.svg" alt="">
+                    </div>
+                    <div class="twitter-icon">
+                        <img src="./assets/Twitter.svg" alt="">
+                    </div>
+                    <div class="instagram-icon">
+                        <img src="./assets/Instagram.svg" alt="">
+                    </div>
+                    <div class="linkedin-icon">
+                        <img src="./assets/LinkedIn.svg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="team-member-card">
+                <div class="placeholder-member-dp">
+                    <img src="./assets/BG (5).png" alt="">
+                </div>
+                <div class="detail">
+                    <h1>Patrick Meyer</h1>
+                    <p>Eye Specialist</p>
+                    <p class="detail-para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse est cumque dicta illum.</p>
+                </div>
+                <div class="social-icons">
+                    <div class="facebook-icon">
+                        <img src="./assets/Facebook.svg" alt="">
+                    </div>
+                    <div class="twitter-icon">
+                        <img src="./assets/Twitter.svg" alt="">
+                    </div>
+                    <div class="instagram-icon">
+                        <img src="./assets/Instagram.svg" alt="">
+                    </div>
+                    <div class="linkedin-icon">
+                        <img src="./assets/LinkedIn.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Team Member -->
 </body>
+
 </html
